@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marksheet>
+  <student>
+    <name>Ashish Gaikwad</name>
+    <college>Atharva College of Engineering</college>
+    <semester>5</semester>
+    <year>Third Year</year>
+    <course>Bachlor of Computer Engineering</course>
+  </student>
+  <marks>
+    <subject>
+      <name>Web Engineering</name>
+      <grade>O</grade>
+    </subject>
+    <subject>
+      <name>Business Communication</name>
+      <grade>O</grade>
+    </subject>
+    <subject>
+      <name>Computer Networks</name>
+      <grade>O</grade>
+    </subject>
+    <subject>
+      <name>Microprocessor</name>
+      <grade>O</grade>
+    </subject>
+    <subject>
+      <name>Structured and Object Oriented Analysis and Design</name>
+      <grade>O</grade>
+    </subject>
+    <subject>
+      <name>Operating System</name>
+      <grade>O</grade>
+    </subject>
+    <total>
+      <grade>O</grade>
+      <pointer>10</pointer>
+    </total>
+  </marks>
+</marksheet>
