@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+  .red {border: 1px solid red; color: red;}
+  body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
+  input, select {border-radius: 6px; padding: 5px 7px; border: 1px solid #ccc; }
+  dt {margin-top: 5px}
+</style>
+<script type="text/javascript">
+  function doValidation() {
+    var form = document.getElementById('validate');
+    form.name.classList.remove('red');
+    form.pass.classList.remove('red');
+    form.email.classList.remove('red');
+    if (!RegExp('[\w]*[a-zA-Z]+[\w]*').test(form.name.value)) {
+      form.name.classList.add('red');
+      return false;
+    }
+    if (form.pass.value.length < 6) {
+      form.pass.classList.add('red');
+      return false;
+    }
+    if (!RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}').test(form.email.value)) {
+      form.email.classList.add('red');
+      return false;
+    }
+    return true;
+  }
+</script>
+</head>
+<body>
+  <form onsubmit="return doValidation();" id="validate" method="get">
+    <h2>Form Validation using JavaScript</h2>
+    <dl>
+      <dt>First Name</dt>
+      <dd> <input type="text" name="firstname" placeholder="Steve"> </dd>
+      <dt>Last Name</dt>
+      <dd> <input type="text" name="lastname" placeholder="Jobs"> </dd>
+      <dt>Password</dt>
+      <dd> <input type="password" name="pass" placeholder="Minimun 6 Char"> </dd>
+      <dt>Confirm Password</dt>
+      <dd> <input type="password" name="conf" placeholder="Retype Password"> </dd>
+      <dt>User ID (email)</dt>
+      <dd> <input type="email" name="email" placeholder="steve@apple.com"> </dd>
+      <dt>Gender</dt>
+      <dd> <input type="radio" name="gender" value="female"> Female </dd>
+      <dd> <input type="radio" name="gender" value="male"> Male </dd>
+      <dd> <input type="radio" name="gender" value="trans"> Trans </dd>
+      <dt>Country</dt>
+      <dd>
+        <select name="country">
+          <option value="in">India</option>
+          <option value="cn">China</option>
+          <option value="bz">Brazil</option>
+          <option value="ru">Russia</option>
+          <option value="pk">Pakistan</option>
+          <option value="np">Nepal</option>
+          <option value="bh">Bhutan</option>
+        </select>
+      </dd>
+      <dt>Languages Known</dt>
+      <dd> <input type="checkbox" name="lang" value="mr"> Marathi </dd>
+      <dd> <input type="checkbox" name="lang" value="gu"> Gujarati </dd>
+      <dd> <input type="checkbox" name="lang" value="te"> Telugu </dd>
+      <dd> <input type="checkbox" name="lang" value="tu"> Tulu </dd>
+      <dd> <input type="checkbox" name="lang" value="ka"> Kannad </dd>
+      <dt>Alternate Email ID</dt>
+      <dd> <input type="email" name="altmail" placeholder="bill@ms.com"> </dd>
+    </dl>
+    <p> <input type="submit" value="Validate and Submit"> </p>
+  </form>
+</body>
+</html>
