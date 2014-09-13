@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Document created by: Ashish Gaikwad-->
+<!--DOCTYPE books SYSTEM "books.dtd"-->
 <books>
 	<book>
 		<title>The Lean Startup</title>
