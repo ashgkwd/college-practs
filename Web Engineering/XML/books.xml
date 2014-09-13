@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--DOCTYPE books SYSTEM "books.dtd"-->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE books SYSTEM "books.dtd">
 <books>
 	<book>
 		<title>The Lean Startup</title>

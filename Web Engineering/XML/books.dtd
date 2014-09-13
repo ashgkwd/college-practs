@@ -1,4 +1,4 @@
-<!ELEMENT books (book)>
+<!ELEMENT books (book)*>
 <!ELEMENT book (title, author, ISBN, publisher, edition, prise)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT author (#PCDATA)>
