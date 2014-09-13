@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+  .red {border: 1px solid red; color: red;}
+  body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
+  input {border-radius: 6px; padding: 5px 7px; border: 1px solid #ccc; }
+</style>
+<script type="text/javascript">
+  function doValidation() {
+    var form = document.getElementById('validate');
+    form.name.classList.remove('red');
+    form.pass.classList.remove('red');
+    form.email.classList.remove('red');
+    if (!RegExp('[\w]*[a-zA-Z]+[\w]*').test(form.name.value)) {
+      form.name.classList.add('red');
+      return false;
+    }
+    if (form.pass.value.length < 6) {
+      form.pass.classList.add('red');
+      return false;
+    }
+    if (!RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}').test(form.email.value)) {
+      form.email.classList.add('red');
+      return false;
+    }
+    return true;
+  }
+</script>
+</head>
+<body>
+  <form onsubmit="return doValidation();" id="validate" method="get">
+    <h2>Form Validation using JavaScript</h2>
+    <dl>
+      <dt>Your Name</dt>
+      <dd> <input type="text" name="name" placeholder="Steve Jobs"> </dd>
+      <dt>Password</dt>
+      <dd> <input type="password" name="pass" placeholder="Minimun 6 Char"> </dd>
+      <dt>Email ID</dt>
+      <dd> <input type="email" name="email" placeholder="steve@apple.com"> </dd>
+    </dl>
+    <p> <input type="submit" value="Validate and Submit"> </p>
+  </form>
+</body>
+</html>

@@ -2,6 +2,10 @@
 <html>
 <head>
 <title>Prime Numbers</title>
+<style type="text/css">
+  body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
+  input {border-radius: 6px; padding: 5px 7px; border: 1px solid #ccc; }
+</style>
 </head>
 <body>
 
@@ -11,7 +15,7 @@ $b = $_GET['b'];
 if(is_numeric($a) && is_numeric($b)) {
  function IsPrime($number) {
     if ($number <= 1) return 0; // zero and one are not prime
-    if (($number > 2) && (($number % 2) == 0)) return 0; //no even number is prime number (bar 2)
+    if (($number > 2) && (($number % 2) == 0)) return 0;
     for ($i=2; $i*$i<=$number; $i++) {
       if ($number % $i == 0) return 0;
     }
