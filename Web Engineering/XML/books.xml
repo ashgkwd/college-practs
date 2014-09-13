@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: Ashish Gaikwad-->
+<books>
+	<book>
+		<title>The Lean Startup</title>
+		<author>Eric Rise</author>
+		<ISBN>2002014</ISBN>
+		<publisher>Fountain Hills</publisher>
+		<edition>1</edition>
+		<prise>800</prise>
+	</book>
+	<book>
+		<title>Introduction to programming with C++</title>
+		<author>Abhiram Ranade</author>
+		<ISBN>2002012</ISBN>
+		<publisher>Mac Hills</publisher>
+		<edition>2</edition>
+		<prise>360</prise>
+	</book>
+	<book>
+		<title>C for dummies</title>
+		<author>Rajaram Mojuta</author>
+		<ISBN>2003012</ISBN>
+		<publisher>Pod Hills</publisher>
+		<edition>2</edition>
+		<prise>560</prise>
+	</book>
+	<book>
+		<title>Effective C++</title>
+		<author>Brajman Strotup</author>
+		<ISBN>1002012</ISBN>
+		<publisher>Pearls</publisher>
+		<edition>7</edition>
+		<prise>400</prise>
+	</book>
+	<book>
+		<title>PS: I love you</title>
+		<author>Dan Brown</author>
+		<ISBN>6002012</ISBN>
+		<publisher>Watch Hills</publisher>
+		<edition>1</edition>
+		<prise>60</prise>
+	</book>
+	<book>
+		<title>Pearls of programming</title>
+		<author>Roger and Roger</author>
+		<ISBN>2006012</ISBN>
+		<publisher>Panda Publications</publisher>
+		<edition>4</edition>
+		<prise>300</prise>
+	</book>
+	<book>
+		<title>Learning Python</title>
+		<author>Dr. Watson</author>
+		<ISBN>2102012</ISBN>
+		<publisher>O relly</publisher>
+		<edition>3</edition>
+		<prise>500</prise>
+	</book>
+	<book>
+		<title>Adventures of Serlock Holmes</title>
+		<author>Conon</author>
+		<ISBN>2202012</ISBN>
+		<publisher>Basker ville publications</publisher>
+		<edition>2</edition>
+		<prise>60</prise>
+	</book>
+</books>
