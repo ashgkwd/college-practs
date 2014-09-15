@@ -50,20 +50,20 @@
 			var C = document.getElementsByName('lang');
 			var i = C.length - 1;
 			for (; i >= 0; i--) if (C[i].checked) break;
-			if (i<0) {
-				document.getElementById('lang-help').classList.add('backred');
-				document.getElementById('lang-help').classList.remove('hidden');
-				return false;
-			}
-			if (!reEmail.test(form.altmail.value) || form.altmail.value == form.email.value) {
-				form.altmail.classList.add('red');
-				document.getElementById('altmail-help').classList.remove('hidden');
-				return false;
-			}
-			alert('Form is Valid! Cheers');
-			return false;
-		}
-	</script>
+       if (i<0) {
+        document.getElementById('lang-help').classList.add('backred');
+        document.getElementById('lang-help').classList.remove('hidden');
+        return false;
+      }
+      if (!reEmail.test(form.altmail.value) || form.altmail.value == form.email.value) {
+        form.altmail.classList.add('red');
+        document.getElementById('altmail-help').classList.remove('hidden');
+        return false;
+      }
+      alert('Form is Valid! Cheers');
+      return false;
+    }
+  </script>
 </head>
 <body>
 	<form onsubmit="return doValidation();" id="validate" method="get">

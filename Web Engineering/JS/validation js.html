@@ -1,38 +1,38 @@
 <!doctype html>
 <html>
 <head>
-<style type="text/css">
-  .red {border: 2px dotted red; color: red;} button {padding: 5px 7px; font-size: large;}
-  body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
-  input {border-radius: 0 6px 6px 0; margin: 0; padding: 5px 7px; border: 2px solid #eee;}
-  .help {color: #aaa; font-size: small;} .hidden {visibility: hidden;} select {width: 246px;}
-  .control {margin: 10px 0;} .control span:first-child {display: inline-block; border-radius: 6px 0 0 6px; margin: 0 -4px 0 0; background-color: #eee; width: 150px; text-align: right; padding: 5px 7px;}
-</style>
-<script type="text/javascript">
-  function doValidation() {
-    var form = document.getElementById('validate');
-    form.name.classList.remove('red');
-    form.pass.classList.remove('red');
-    form.email.classList.remove('red');
-    if (!RegExp('[a-zA-Z]+').test(form.name.value)) {
-      form.name.classList.add('red');
-      document.getElementById('name-help').classList.remove('hidden');
-      return false;
+  <style type="text/css">
+    .red {border: 2px dotted red; color: red;} button {padding: 5px 7px; font-size: large;}
+    body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
+    input {border-radius: 0 6px 6px 0; margin: 0; padding: 5px 7px; border: 2px solid #eee;}
+    .help {color: #aaa; font-size: small;} .hidden {visibility: hidden;} select {width: 246px;}
+    .control {margin: 10px 0;} .control span:first-child {display: inline-block; border-radius: 6px 0 0 6px; margin: 0 -4px 0 0; background-color: #eee; width: 150px; text-align: right; padding: 5px 7px;}
+  </style>
+  <script type="text/javascript">
+    function doValidation() {
+      var form = document.getElementById('validate');
+      form.name.classList.remove('red');
+      form.pass.classList.remove('red');
+      form.email.classList.remove('red');
+      if (!RegExp('[a-zA-Z]+').test(form.name.value)) {
+        form.name.classList.add('red');
+        document.getElementById('name-help').classList.remove('hidden');
+        return false;
+      }
+      if (form.pass.value.length < 6) {
+        form.pass.classList.add('red');
+        document.getElementById('pass-help').classList.remove('hidden');
+        return false;
+      }
+      if (!RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}').test(form.email.value)) {
+        form.email.classList.add('red');
+        document.getElementById('email-help').classList.remove('hidden');
+        return false;
+      }
+      alert('Form is Valid! Cheers');
+      return true;
     }
-    if (form.pass.value.length < 6) {
-      form.pass.classList.add('red');
-      document.getElementById('pass-help').classList.remove('hidden');
-      return false;
-    }
-    if (!RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}').test(form.email.value)) {
-      form.email.classList.add('red');
-      document.getElementById('email-help').classList.remove('hidden');
-      return false;
-    }
-    alert('Form is Valid! Cheers');
-    return true;
-  }
-</script>
+  </script>
 </head>
 <body>
   <form onsubmit="return doValidation();" id="validate" method="get">
