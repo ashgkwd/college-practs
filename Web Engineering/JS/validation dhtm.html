@@ -1,92 +1,129 @@
 <!doctype html>
 <html>
 <head>
-<style type="text/css">
-  .red {border: 1px solid red; color: red;}
-  body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
-  input, select {border-radius: 6px; padding: 5px 7px; border: 1px solid #ccc; }
-  dt {margin-top: 5px}
-</style>
-<script type="text/javascript">
-  function doValidation() {
-    var form = document.getElementById('validate');
-    var reAlpha = RegExp('[\w]*[a-zA-Z]+[\w]*');
-    var reEmail = RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}');
-    form.first.classList.remove('red');
-    form.last.classList.remove('red');
-    form.pass.classList.remove('red');
-    form.conf.classList.remove('red');
-    form.email.classList.remove('red');
-    form.altmail.classList.remove('red');
-    if (!reAlpha.test(form.first.value)) {
-      form.first.classList.add('red');
-      return false;
-    }
-    if (!reAlpha.test(form.last.value)) {
-      form.last.classList.add('red');
-      return false;
-    }
-    if (form.pass.value.length < 6) {
-      form.pass.classList.add('red');
-      return false;
-    }
-    if (form.conf.value != form.pass.value) {
-      form.conf.classList.add('red');
-      return false;
-    }
-    if (!reEmail.test(form.email.value)) {
-      form.email.classList.add('red');
-      return false;
-    }
-    if (!reEmail.test(form.altmail.value) || form.altmail.value == form.email.value) {
-      form.altmail.classList.add('red');
-      return false;
-    }
-    alert('Form is Valid! Cheers');
-    return true;
-  }
-</script>
+	<style type="text/css">
+		.red {border: 2px dashed red; color: red;} dt {width: 200px; text-align: right;}
+		body {font-family: "Helvetica", "Arial", "Open Sans", "Sans", sans-serif;}
+		input, select {border-radius: 0 6px 6px 0; margin: 0; padding: 5px 7px; border: 2px solid #eee;}
+		.help {color: #aaa; font-size: small;} .hidden {visibility: hidden;} select {width: 246px;}
+		.control {margin: 10px 0;} .control span:first-child {display: inline-block; border-radius: 6px 0 0 6px; margin: 0 -4px 0 0; background-color: #eee; width: 150px; text-align: right; padding: 5px 7px;}
+		button {padding: 5px 7px; font-size: large;}
+		.backred {background-color: red; color: white; padding: 3px; border-radius: 3px}
+	</style>
+	<script type="text/javascript">
+		function doValidation() {
+			var form = document.getElementById('validate');
+			var reAlpha = RegExp('[a-zA-Z]+');
+			var reEmail = RegExp('[a-zA-Z0-9.-_]+@[a-zA-Z0-9]+[a-zA-Z0-9.-_]*\.[a-zA-Z0-9]{2,}');
+			form.first.classList.remove('red');
+			form.last.classList.remove('red');
+			form.pass.classList.remove('red');
+			form.conf.classList.remove('red');
+			form.email.classList.remove('red');
+			document.getElementById('lang-help').classList.remove('backred');
+			form.altmail.classList.remove('red');
+			if (!reAlpha.test(form.first.value)) {
+				form.first.classList.add('red');
+				document.getElementById('first-help').classList.remove('hidden');
+				return false;
+			}
+			if (!reAlpha.test(form.last.value)) {
+				form.last.classList.add('red');
+				document.getElementById('last-help').classList.remove('hidden');
+				return false;
+			}
+			if (form.pass.value.length < 6) {
+				form.pass.classList.add('red');
+				document.getElementById('pass-help').classList.remove('hidden');
+				return false;
+			}
+			if (form.conf.value != form.pass.value) {
+				form.conf.classList.add('red');
+				document.getElementById('conf-help').classList.remove('hidden');
+				return false;
+			}
+			if (!reEmail.test(form.email.value)) {
+				form.email.classList.add('red');
+				document.getElementById('email-help').classList.remove('hidden');
+				return false;
+			}
+			var C = document.getElementsByName('lang');
+			var i = C.length - 1;
+			for (; i >= 0; i--) if (C[i].checked) break;
+			if (i<0) {
+				document.getElementById('lang-help').classList.add('backred');
+				document.getElementById('lang-help').classList.remove('hidden');
+				return false;
+			}
+			if (!reEmail.test(form.altmail.value) || form.altmail.value == form.email.value) {
+				form.altmail.classList.add('red');
+				document.getElementById('altmail-help').classList.remove('hidden');
+				return false;
+			}
+			alert('Form is Valid! Cheers');
+			return false;
+		}
+	</script>
 </head>
 <body>
-  <form onsubmit="return doValidation();" id="validate" method="get">
-    <h2>Form Validation in DHTML</h2>
-    <dl>
-      <dt>First Name</dt>
-      <dd> <input type="text" name="first" placeholder="Steve"> </dd>
-      <dt>Last Name</dt>
-      <dd> <input type="text" name="last" placeholder="Jobs"> </dd>
-      <dt>Password</dt>
-      <dd> <input type="password" name="pass" placeholder="Minimun 6 Char"> </dd>
-      <dt>Confirm Password</dt>
-      <dd> <input type="password" name="conf" placeholder="Retype Password"> </dd>
-      <dt>User ID (email)</dt>
-      <dd> <input type="email" name="email" placeholder="steve@apple.com"> </dd>
-      <dt>Gender</dt>
-      <dd> <input type="radio" name="gender" value="female"> Female </dd>
-      <dd> <input type="radio" name="gender" value="male"> Male </dd>
-      <dd> <input type="radio" name="gender" value="trans"> Trans </dd>
-      <dt>Country</dt>
-      <dd>
-        <select name="country">
-          <option value="in">India</option>
-          <option value="cn">China</option>
-          <option value="bz">Brazil</option>
-          <option value="ru">Russia</option>
-          <option value="pk">Pakistan</option>
-          <option value="np">Nepal</option>
-          <option value="bh">Bhutan</option>
-        </select>
-      </dd>
-      <dt>Languages Known</dt>
-      <dd> <input type="checkbox" name="lang" value="mr"> Marathi </dd>
-      <dd> <input type="checkbox" name="lang" value="gu"> Gujarati </dd>
-      <dd> <input type="checkbox" name="lang" value="te"> Telugu </dd>
-      <dd> <input type="checkbox" name="lang" value="tu"> Tulu </dd>
-      <dd> <input type="checkbox" name="lang" value="ka"> Kannad </dd>
-      <dt>Alternate Email ID</dt>
-      <dd> <input type="email" name="altmail" placeholder="bill@ms.com"> </dd>
-    </dl>
-    <p> <input type="submit" value="Validate and Submit"> </p>
-  </form>
+	<form onsubmit="return doValidation();" id="validate" method="get">
+		<h2>Form Validation in DHTML</h2>
+		<div class="control">
+			<span>First Name</span> <input type="text" name="first" placeholder="Steve">
+			<span class="hidden help" id="first-help">Please Enter Alphabets Only</span>
+		</div>
+		<div class="control">
+			<span>Last Name</span>
+			<input type="text" name="last" placeholder="Jobs">
+			<span class="hidden help" id="last-help">Please Enter Alphabets Only</span>
+		</div>
+		<div class="control">
+			<span>Password</span>
+			<input type="password" name="pass" placeholder="Minimun 6 Char" minlength="6">
+			<span class="hidden help" id="pass-help">Password Should Be At Least 6 Characters</span>
+		</div>
+		<div class="control">
+			<span>Confirm Password</span>
+			<input type="password" name="conf" placeholder="Retype Password">
+			<span class="hidden help" id="conf-help">Must Match With Above Password</span>
+		</div>
+		<div class="control">
+			<span>User ID (email)</span>
+			<input type="email" name="email" placeholder="steve@apple.com">
+			<span class="hidden help" id="email-help">Please Enter Valid Email</span>
+		</div>
+		<div class="control">
+			<span>Gender</span>
+			<input type="radio" name="gender" value="female" checked="true"> Female 
+			<input type="radio" name="gender" value="male"> Male 
+			<input type="radio" name="gender" value="trans"> Trans 
+		</div>
+		<div class="control">
+			<span>Country</span>
+			<select name="country">
+				<option value="in">India</option>
+				<option value="cn">China</option>
+				<option value="bz">Brazil</option>
+				<option value="ru">Russia</option>
+				<option value="pk">Pakistan</option>
+				<option value="np">Nepal</option>
+				<option value="bh">Bhutan</option>
+			</select>
+		</div>
+		<div class="control">
+			<span>Languages Known</span>
+			<input type="checkbox" name="lang" value="mr"> Marathi
+			<input type="checkbox" name="lang" value="gu"> Gujarati 
+			<input type="checkbox" name="lang" value="tu"> Tulu 
+			<input type="checkbox" name="lang" value="ka"> Kannad 
+			<span class="hidden help" id="lang-help">Please Select At Least One Language</span>
+		</div>
+		<div class="control">
+			<span>Alternate Email ID</span>
+			<input type="email" name="altmail" placeholder="bill@ms.com">
+			<span class="hidden help" id="altmail-help">Alternate Email Should Be Different Than User ID</span>
+		</div>
+		<p> <button type="submit">Validate and Submit</button> </p>
+	</form>
 </body>
 </html>
