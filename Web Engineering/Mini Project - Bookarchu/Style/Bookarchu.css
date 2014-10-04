@@ -1,0 +1,128 @@
+* {margin: 0;-webkit-transition: ease all 1s;-moz-transition: ease all 1s;-o-transition: ease all 1s; transition:ease all 1s;}
+body {
+  font-family: "Arial", "Open Sans", "Helvetica", sans-serif;
+  background-color: #fafafa;
+  color: #222;
+}
+
+header {
+  padding: 0 30px;
+  background-color: #2C3E50;
+  color: #19B5FE;
+  font-size: xx-large;
+}
+
+header h1 {
+  padding: 5px;
+  display: inline-block;
+}
+
+h1 span  {
+  color: #F9BF3B;
+  font-weight: lighter;
+}
+
+header a {
+  float: right;
+  padding-top: 25px;
+  font-size: 20px;
+}
+
+a {
+  color: #22A7F0;
+  text-decoration: none;
+} a:hover {color: #3498DB;}
+
+input {
+  padding: 0 5px;
+  border: 0 solid transparent;
+  background-color: transparent;
+  outline: none;
+  font-size: xx-large;
+  border-bottom: 2px solid #6BB9F0;
+  border-radius: 6px;
+}
+
+footer {
+  color: #FFECDB;
+  bottom: 10px;
+  width: 100%;
+  position: fixed;
+}
+
+#loading {
+  color: #999;
+}
+
+.ag-search-container {
+  margin: 3rem 50px;
+}
+
+.ag-content {
+  padding: 2rem 3rem;
+  margin: 10px;
+  border-radius: 4px;
+  opacity: 0.3;
+  box-shadow: 0 0 0.6em #555;
+  border-top: 1px solid rgba(142, 68, 173, 0.2);
+  background: rgba( 34, 49, 63, 0.7);
+} .ag-content:hover {
+  opacity: 1;
+}
+
+.ag-result-list {
+  margin: 1em 3rem 10rem 3rem;
+}
+
+.ag-form-ctrl, button {
+  margin: 1rem 1rem 1rem 3rem;
+} .ag-form-ctrl[type="submit"], button {
+  background-color: #6BB9F0;
+  color: white;
+  font-weight: bolder;
+}
+
+.ag-card {
+  padding: 1em 5px 5px 20px;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  box-shadow: 1px 1px 0.3em #ccc;
+  text-transform: capitalize;
+}
+
+.ag-panel {padding: 3rem 0; border-bottom: 1px solid #ddd; background-color: #4183D7;}
+
+.c-title {
+  font-size: xx-large;
+}
+
+.c-author {
+  padding: 5px 0;
+  color: #777;
+}
+
+.c-link {
+  padding: 0.7em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.c-box {
+  padding: 1em 1em 1em 0;
+}
+
+.c-publication {
+  color: #777;
+  font-weight: bolder;
+}
+
+.c-remove {
+  color: #999;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+} .c-remove:hover {
+    color: white;
+    background-color: #CF000F;
+}
