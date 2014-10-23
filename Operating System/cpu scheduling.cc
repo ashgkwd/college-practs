@@ -21,6 +21,8 @@ public:
   int arrival, burst, priority, start, finish, tat, waiting;
 };
 
+// Non Preemptive Algorithm
+
 void non_preemptive(std::vector<Process> v, int N) {
   int total_waiting = 0, total_tat = 0;
 
@@ -65,9 +67,30 @@ bool sortPriority(Process i, Process j) {
   return i.priority < j.priority;
 }
 
+// Preemptive Algorithm
+
+void round_robin(std::vector<Process> v, int N, int T) {
+  int total_run_time = 0;
+  int i = 0;
+  while(!v.empty()) {
+    Process& p = v[i];
+    if (p.burst >= T) {
+      p.burst -= T;
+      printf("Process %s: Completed %d Remaining %d\n",
+        p.name.c_str(), T, p.burst);
+      i = (i+1) % N;
+    } else {
+      printf("Process %s Completed Execution. Last share %d\n",
+        p.name.c_str(), p.burst);
+      v.erase(v.begin() + i);
+      N--;
+    }
+  }
+}
+
 int main () {
   std::vector<Process> v;
-  int N, a, b, c;
+  int N, T, a, b, c;
   char s[100];
 
   printf("Enter total number of processes\n");
@@ -101,4 +124,16 @@ int main () {
   printf("Priority:\n");
   std::sort(v.begin(), v.end(), sortPriority);
   non_preemptive(v, N);
+
+  v.clear();
+  printf("Process details for round robin-wa\n");
+  printf("Enter total number of process and time quantum\n");
+  scanf("%d%d", &N, &T);
+  printf("Enter Process Name, Burst Time\n");
+  for (int i = 0; i<N; i++) {
+    scanf("%s%d", s, &b);
+    v.push_back(Process(s, 0, b));
+  }
+  printf("Round Robin\n");
+  round_robin(v, N, T);
 }
