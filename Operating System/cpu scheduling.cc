@@ -1,6 +1,6 @@
 /**
 * @author: Ashish Gaikwad <ash.gkwd@gmail.com>
-* @copy: All rights reserved 2014
+* @copy: No rights reserved 2014 (its MIT)
 * @description: CPU Scheduling algorithms like FCFS, SJF, Round Robin.
 */
 
