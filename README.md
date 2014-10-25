@@ -2,7 +2,7 @@ Welcome Message
 ===============
 
 This is awesome collection of programs which are generally asked in college practicals.
-Programs are categorized as per subject. Basic reference for subject naming is based on
+Programs are categorized as per subject. Primary reference for subject naming is 
 Mumbai University's Syllabus.
 
 Contribute
