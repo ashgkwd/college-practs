@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookarchu [Admin] - The Awesome Book Search App</title>
+  <meta charset="utf8">
+  <script type="text/javascript" src="Script/Bookarchu.js"></script>
+  <link rel="stylesheet" type="text/css" href="Style/Bookarchu.css">
+</head>
+<body>
+<header>
+  <h1>Book<span>archu</span></h1>
+  <a href="/logout.php">Logout</a>
+</header>
+
+<section class="ag-panel">
+<div class="ag-form-ctrl">
+  <input type="text" pattern="[a-zA-Z0-9\s\+\-]*" placeholder="Add Book Title" id="book-title" required><br>
+  <input type="text" pattern="[a-zA-Z0-9\s\+\-]*" placeholder="Add Book Author" id="book-author" required><br>
+  <input type="text" pattern="[a-zA-Z0-9\s\+\-]*" placeholder="Add Publication" id="book-publication" required><br>
+  <input type="url" placeholder="Add URL link" id="book-link" required> &emsp; &emsp; <span style="visibility:hidden;" id="message"></span>
+</div>
+</section>
