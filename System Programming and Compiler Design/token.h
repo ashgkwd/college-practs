@@ -2,6 +2,9 @@
 #include <vector>
 #include <locale>
 
+#ifndef AG_TOKEN_H_1
+#define AG_TOKEN_H_1 221
+
 enum TokenType {
 	ID,
 	OP,
@@ -10,8 +13,8 @@ enum TokenType {
 
 class Token {
 public:
-	const std::string value;
-	const TokenType type;
+	std::string value;
+	TokenType type;
 
 	Token(std::string v, TokenType t) :
 	value(v), type(t) {}
@@ -37,19 +40,21 @@ std::vector<Token> getTokens (const std::string& expression) {
 		if (not token.empty()) {
 			// add this `id` or `value` to tokens
 			if (std::isdigit(token[0]))
-				tokens.push_back(Token(token, TokenType::VAL));
+				tokens.push_back(Token{token, TokenType::VAL});
 			else
-				tokens.push_back(Token(token, TokenType::ID));
+				tokens.push_back(Token{token, TokenType::ID});
 
 			token.clear();
 			i--;
 		} else {
 			// add this `symbol` to tokens
 			token += c;
-			if (not std::isspace(c, loc)) tokens.push_back(Token(token, TokenType::OP));
+			if (not std::isspace(c, loc)) tokens.push_back(Token{token, TokenType::OP});
 			token.clear();
 		}
 	}
 
 	return tokens;
 }
+
+#endif
