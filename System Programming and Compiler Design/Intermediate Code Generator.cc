@@ -29,7 +29,7 @@ Quadruples getQuadruples (std::vector<Token>& tokens, const int& result, const s
 
 	if (op == "=") {
 		// arg_1 is register ` 'r'+arg2 `, result is `arg_1`
-		return Quadruples("", std::string("r") + arg_2, "", arg_1);
+		return Quadruples("", arg_2, "", arg_1);
 	}
 
 	return Quadruples(op, arg_1, arg_2, std::string("r") + std::to_string(result));
@@ -49,7 +49,7 @@ int main () {
 	intermediate_codes.push_back(getQuadruples(tokens, registerCount, arg_2));
 	
 	while (not tokens.empty()) {
-		arg_2 = std::to_string(registerCount);
+		arg_2 = std::string("r") + std::to_string(registerCount);
 		registerCount++;
 		intermediate_codes.push_back(getQuadruples(tokens, registerCount, arg_2));
 	}
