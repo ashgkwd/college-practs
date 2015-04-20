@@ -10,7 +10,8 @@ int main () {
 	std::vector<Token> tokens = getTokens(expression);
 
 	std::cout << "{Output After Rearranging As Per Operator Precedence}" << std::endl;
-	for (const std::string& t : tokensAsPerPrecedence(tokens)) {
-		std::cout << t << std::endl;
+	std::cout << "{TYPE\tVALUE}" << std::endl;
+	for (const Token& t : tokensAsPerPrecedence(tokens)) {
+		std::cout << t.type << "\t" << t.value << std::endl;
 	}
 }
