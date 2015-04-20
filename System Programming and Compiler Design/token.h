@@ -19,8 +19,6 @@ public:
 
 std::vector<Token> getTokens (const std::string& expression) {
 	const std::locale loc;
-	// std::string expression;
-	// std::getline(std::cin, expression);
 	const int length = expression.size();
 
 	std::vector<Token> tokens;
