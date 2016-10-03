@@ -1,38 +1,24 @@
-#include <bits/stdc++.h>
-
 namespace ashgkwd {
+
+#ifndef H_STACK_ASHGKWD
+#define H_STACK_ASHGKWD 8
+
 	class Stack
 	{
 	private:
-		const int MAX = 10;
+		static const int MAX = 10;
 		int store[10];
 		int top;
 
 	public:
 		Stack();
-		~Stack();
 
-		bool push(int value) {
-			if(!is_full()) {
-				store[++top] = value;
-				return true;
-			}
-			return false;
-		}
+		bool push(int value);
+		int pop();
 
-		int pop() {
-			if(!is_empty()) {
-				return store[top--];
-			}
-			return -1;
-		}
-
-		bool is_empty() {
-			return top < 0;
-		}
-
-		bool is_full() {
-			return top >= MAX;
-		}
+		bool is_empty();
+		bool is_full();
 	};
+
+#endif
 }
