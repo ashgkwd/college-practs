@@ -7,7 +7,7 @@ namespace ashgkwd {
 	{
 	private:
 		static const int MAX = 10;
-		int store[10];
+		int store[MAX];
 		int top;
 
 	public:
